@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Welcome to Gojo Stores</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+	<link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+	<nav>
+		<img src="logo.png" alt="Brand Logo">
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Book</a></li>
+			<li>
+				<a href="#">Packages</a>
+				<ul>
+					<li><a href="#">United States</a></li>
+					<li><a href="#">India</a></li>
+					<li><a href="#">France</a></li>
+					<li><a href="#">Germany</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Services</a></li>
+			<li><a href="#">Gallery</a></li>
+			<li><a href="#">About</a></li>
+		</ul>
+		<button data-toggle="modal" data-target="#loginModal">Login</button>
+		<button data-toggle="modal" data-target="#registerModal">Register</button>
+	</nav>
+	<div class="container-header">
+		<h1>Welcome to Gojo Stores</h1>
+		<h2 id="changingText"></h2>
+		<button>Book Now</button>
+	</div>
+
+	<div class="row">
+		<div class="half">
+			<img src="logo.png" alt="Brand Image">
+		</div>
+		<div class="form-container half">
+			<label for="destination">Where to:</label>
+			<select id="destination" name="destination">
+				<li><a href="#">United States</a></li>
+				<option value="place1">United States</option>
+				<option value="place1">India</option>
+				<option value="place1">France</option>
+				<option value="place1">Germany</option>
+			</select>
+
+			<label for="persons">How Many Person:</label>
+			<input type="number" id="persons" name="persons" min="1" required>
+
+			<label for="startDate">Start Date:</label>
+			<input type="date" id="startDate" name="startDate" min="2023-11-06" required>
+
+			<label for="endDate">End Date:</label>
+			<input type="date" id="endDate" name="endDate" min="2023-11-06" required>
+
+			<label for="description">Description:</label>
+			<textarea id="description" name="description" rows="5" minlength="50" maxlength="500" required></textarea>
+
+			<button class="btn-common" onclick="bookNow()">Book Now</button>
+		</div>
+	</div>
+
+	<div class="gallery-section">
+
+		<div class="gallery-card">
+			<img src="p1.jpg" alt="Package 1">
+			<h3>INDIA</h3>
+			<p>Attractions of the place. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<p>Price: $180</p>
+			<p>Rating: 5.0</p>
+			<button class="btn-common">Book Now</button>
+		</div>
+
+		<div class="gallery-card">
+			<img src="p2.jpg" alt="Package 2">
+			<h3>Germany</h3>
+			<p>Attractions of the place. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<p>Price: $500</p>
+			<p>Rating: 4.0</p>
+			<button class="btn-common">Book Now</button>
+		</div>
+
+		<div class="gallery-card">
+			<img src="p3.jpg" alt="Package 3">
+			<h3>USA</h3>
+			<p>Attractions of the place. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<p>Price: $120</p>
+			<p>Rating: 4.3</p>
+			<button class="btn-common">Book Now</button>
+		</div>
+
+		<div class="gallery-card">
+			<img src="p4.jpg" alt="Package 4">
+			<h3>France</h3>
+			<p>Attractions of the place. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<p>Price: $100</p>
+			<p>Rating: 4.5</p>
+			<button class="btn-common">Book Now</button>
+		</div>
+
+		<div class="gallery-card">
+			<img src="p5.jpg" alt="Package 5">
+			<h3>Norway</h3>
+			<p>Attractions of the place. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<p>Price: $800</p>
+			<p>Rating: 3.8</p>
+			<button class="btn-common">Book Now</button>
+		</div>
+
+		<div class="gallery-card">
+			<img src="p6.jpg" alt="Package 6">
+			<h3>Dubai</h3>
+			<p>Attractions of the place. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<p>Price: $80</p>
+			<p>Rating: 4.7</p>
+			<button class="btn-common">Book Now</button>
+		</div>
+
+		<div class="gallery-card">
+			<img src="p7.jpg" alt="Package 7">
+			<h3>Australia</h3>
+			<p>Attractions of the place. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<p>Price: $110</p>
+			<p>Rating: 4.1</p>
+			<button class="btn-common">Book Now</button>
+		</div>
+
+		<div class="gallery-card">
+			<img src="p4.jpg" alt="Package 8">
+			<h3>Dubai</h3>
+			<p>Attractions of the place. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<p>Price: $600</p>
+			<p>Rating: 4.7</p>
+			<button class="btn-common">Book Now</button>
+		</div>
+
+		<div class="gallery-card">
+			<img src="p9.jpg" alt="Package 9">
+			<h3>India</h3>
+			<p>Attractions of the place. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<p>Price: $400</p>
+			<p>Rating: 4.2</p>
+			<button class="btn-common">Book Now</button>
+		</div>
+
+	</div>
+
+	<div class="services-section">
+		<h2>Our Services</h2>
+
+		<div class="service-card">
+			<h3>Affordable Hotel</h3>
+			<p>Providing affordable and comfortable accommodation for your stay.</p>
+		</div>
+
+		<div class="service-card">
+			<h3>Food & Drinks</h3>
+			<p>Explore a variety of delicious local and international cuisines.</p>
+		</div>
+
+		<div class="service-card">
+			<h3>Safety Guide</h3>
+			<p>Experienced safety guides to ensure a secure and enjoyable journey.</p>
+		</div>
+
+		<div class="service-card">
+			<h3>Transportation</h3>
+			<p>Efficient and reliable transportation services for your convenience.</p>
+		</div>
+
+		<div class="service-card">
+			<h3>Event Planning</h3>
+			<p>Professional event planning services for special occasions and gatherings.</p>
+		</div>
+
+		<div class="service-card">
+			<h3>Adventure Tours</h3>
+			<p>Explore thrilling adventures with our curated adventure tour packages.</p>
+		</div>
+	</div>
+
+	<div class="gallery-section">
+		<h2>Gallery</h2>
+
+		<div class="gallery-container">
+			<div class="gallery-item" onmouseover="hoverImage(this)" onmouseout="unhoverImage(this)">
+				<img src="p1.jpg" alt="Gallery Image">
+			</div>
+
+			<div class="gallery-item" onmouseover="hoverImage(this)" onmouseout="unhoverImage(this)">
+				<img src="p2.jpg" alt="Gallery Image">
+			</div>
+			<div class="gallery-item" onmouseover="hoverImage(this)" onmouseout="unhoverImage(this)">
+				<img src="p3.jpg" alt="Gallery Image">
+			</div>
+			<div class="gallery-item" onmouseover="hoverImage(this)" onmouseout="unhoverImage(this)">
+				<img src="p4.jpg" alt="Gallery Image">
+			</div>
+			<div class="gallery-item" onmouseover="hoverImage(this)" onmouseout="unhoverImage(this)">
+				<img src="p5.jpg" alt="Gallery Image">
+			</div>
+			<div class="gallery-item" onmouseover="hoverImage(this)" onmouseout="unhoverImage(this)">
+				<img src="p6.jpg" alt="Gallery Image">
+			</div>
+		</div>
+	</div>
+
+	<div class="about-us-section">
+		<h2>About Us</h2>
+
+		<div class="about-us-container">
+			<div class="about-us-image">
+				<img src="logo.png" alt="Company Image">
+			</div>
+
+			<div class="about-us-info">
+				<h3>Gojo Stores</h3>
+				<p>
+					Welcome to Gojo Stores, your premier destination for unforgettable travel experiences.
+					Our company is dedicated to providing top-notch services, ensuring your journey is filled
+					with joy and adventure.
+				</p>
+				<p>
+					Founded in 2023 , Gojo Stores has been a trusted by many in the travel industry,
+					offering a wide range of packages and services tailored to meet your every need.
+				</p>
+				<p>
+					Contact us today and embark on a journey of a lifetime with Gojo Stores.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="loginModalLabel">Login</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form id="loginForm" onsubmit="return validateLoginForm()">
+						<label for="loginEmail">Email:</label>
+						<input type="email" id="loginEmail" name="loginEmail" required>
+
+						<label for="loginPassword">Password:</label>
+						<input type="password" id="loginPassword" name="loginPassword" required>
+
+						<button type="submit" class="btn-common">Login</button>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<p>Don't have an account? <a href="#" data-dismiss="modal" data-toggle="modal"
+							data-target="#registerModal">Register</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="registerModalLabel">Register</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form id="registrationForm" onsubmit="return validateRegistrationForm()">
+						<label for="fullname">Full Name:</label>
+						<input type="text" id="fullname" name="fullname" required>
+
+						<label for="contact">Contact:</label>
+						<input type="text" id="contact" name="contact" required>
+
+						<label for="dob">Date of Birth:</label>
+						<input type="date" id="dob" name="dob" required>
+
+						<label for="email">Email:</label>
+						<input type="email" id="email" name="email" required>
+
+						<label for="password">Password:</label>
+						<input type="password" id="password" name="password" required>
+
+						<label for="gender">Gender:</label>
+						<select id="gender" name="gender" required>
+							<option value="male">Male</option>
+							<option value="female">Female</option>
+							<option value="other">Other</option>
+						</select>
+
+						<button type="submit" class="btn-common">Register</button>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<p>Already have an account? <a href="#" data-dismiss="modal" data-toggle="modal"
+							data-target="#loginModal">Login</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<footer>
+		<div class="brand-name">
+			<h3>Gojo Stores</h3>
+		</div>
+		<br>
+		<div class="social-icons">
+			<span class="social-icon"><i class="bi bi-instagram"></i></span>
+			<span class="social-icon"><i class="bi bi-facebook"></i></span>
+			<span class="social-icon"><i class="bi bi-whatsapp"></i></span>
+			<span class="social-icon"><i class="bi bi-twitter"></i></span>
+		</div>
+		<p class="copyright">© 2023 Gojo Stores. All Rights Reserved.</p>
+	</footer>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			let changingTextElement = document.getElementById('changingText');
+			let countries = ["United States", "India", "France", "Germany", "Japan", "Australia"];
+			let currentIndex = 0;
+
+			function changeText() {
+				changingTextElement.textContent = "Visit " + countries[currentIndex];
+				currentIndex = (currentIndex + 1) % countries.length;
+			}
+
+			setInterval(changeText, 200);
+		});
+
+		function bookNow() {
+			let destination = document.getElementById('destination').value;
+			let persons = document.getElementById('persons').value;
+			let startDate = document.getElementById('startDate').value;
+			let endDate = document.getElementById('endDate').value;
+			let description = document.getElementById('description').value;
+
+			if (destination && persons && startDate && endDate && description) {
+				alert('Booking successful!');
+			} else {
+				alert('Please fill in all fields.');
+			}
+		}
+
+		function hoverImage(element) {
+			element.style.transform = "scale(1.1)";
+		}
+
+		function unhoverImage(element) {
+			element.style.transform = "scale(1)";
+		}
+
+		function validateRegistrationForm() {
+			let email = document.getElementById('email').value;
+			let password = document.getElementById('password').value;
+
+			if (!isValidEmail(email) || password.length < 6) {
+				alert('Invalid email or password. Please check your input.');
+				return false;
+			}
+
+			return true;
+		}
+
+
+		function validateLoginForm() {
+			let loginEmail = document.getElementById('loginEmail').value;
+			let loginPassword = document.getElementById('loginPassword').value;
+
+			if (!isValidEmail(loginEmail) || loginPassword.length === 0) {
+				alert('Invalid email or password. Please check your input.');
+				return false;
+			}
+
+			return true;
+		}
+
+		function isValidEmail(email) {
+			return /\S+@\S+\.\S+/.test(email);
+		}
+
+	</script>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
